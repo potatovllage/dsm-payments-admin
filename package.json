@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@types/chart.js": "^2.9.32",
+    "@types/react-transition-group": "^4.4.1",
+    "chart.js": "^3.3.2",
+    "react-transition-group": "^4.4.2"
+  }
+}

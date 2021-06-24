@@ -1,5 +1,4 @@
-import React, { FC } from "react";
-import { ChangeEvent } from "react-transition-group/node_modules/@types/react";
+import React, { FC, ChangeEvent } from "react";
 import * as S from "./style";
 interface Props {
   width: number;
