@@ -18,7 +18,7 @@ const Table = <Row,>({
   rows,
   columns,
   style = {},
-  pageSize = 10,
+  pageSize = 9,
   checkboxSelection,
   disableColumnSelector,
   isRowSelectable,

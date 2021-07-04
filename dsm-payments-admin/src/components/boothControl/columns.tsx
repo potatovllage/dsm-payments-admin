@@ -19,7 +19,7 @@ const columns: Column[] = [
   },
   {
     field: "totalPoint",
-    headerName: "총 거래량",
+    headerName: "누적 소지금",
     type: "number",
     width: 150,
   },

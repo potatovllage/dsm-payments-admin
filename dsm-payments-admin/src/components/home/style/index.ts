@@ -34,8 +34,11 @@ export const BigCard = styled(Card)`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  > p {
+  > h3 {
     width: 100%;
+  }
+  > p {
+    text-align: center;
   }
   > div {
     width: 500px;
@@ -54,7 +57,7 @@ export const SmallCard = styled(Card)`
   height: 300px;
 `;
 
-export const Description = styled.p`
+export const Description = styled.h3`
   font-size: 20px;
   font-weight: 300;
 `;

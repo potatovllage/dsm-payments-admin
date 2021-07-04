@@ -1,9 +1,13 @@
-import { LOGIN_URI, request } from ".";
+import { LOGIN_URI, getRequest } from ".";
 
-export const loginRequest = async () => {
-  try {
-    await request.post(LOGIN_URI);
-  } catch (error) {
-    throw error;
-  }
+export const loginRequest = async (value: string) => {
+  await getRequest().post(
+    LOGIN_URI,
+    {},
+    {
+      headers: {
+        Authorization: value,
+      },
+    }
+  );
 };

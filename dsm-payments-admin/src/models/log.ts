@@ -9,6 +9,7 @@ export type Log = {
   place: string;
   number: string;
   time: string;
+  sender: string;
 };
 
 export type Column = {
@@ -19,3 +20,5 @@ export type Column = {
   sortable?: false;
   renderCell?: (params: any) => ReactElement;
 };
+
+export default Log;

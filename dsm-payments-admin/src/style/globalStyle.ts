@@ -93,7 +93,6 @@ input[type=number] {
         max-width: 1980px;
       }
     }
-
 `;
 
 export default global;

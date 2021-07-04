@@ -1,4 +1,6 @@
 import React, { FC, useState } from "react";
+import { boothPayRequest } from "../../../apis/boothApi";
+import { userPayRequest } from "../../../apis/userApi";
 import { useBoothContext } from "../../../hooks/context/boothsContext";
 import { useModalContext } from "../../../hooks/context/modalContext";
 import { useUserContext } from "../../../hooks/context/usersContext";
@@ -10,33 +12,50 @@ interface Props {
   targets: any[];
   isBooth: boolean;
   isMinus: boolean;
+  request?: (id: string, value: number) => void;
 }
 
-function withControlModal({ targets, isBooth, isMinus }: Props): FC {
+function withControlModal({ targets, isBooth, isMinus, request }: Props): FC {
   return () => {
     const [input, setInput] = useState<string>("");
     const { users, setUsers } = useUserContext();
     const { booths, setBooths } = useBoothContext();
     const { setType } = useModalContext();
     const point = parseInt(input);
-    const userButtonClickHandler = () => {
+    const userButtonClickHandler = async () => {
       const changedUsers = users.map((user) => {
         if (targets.find((target) => target.id === user.id)) {
-          let changedUser = { ...user };
-          changedUser.point += isMinus ? -point : point;
-          return changedUser;
+          try {
+            userPayRequest(user.number, isMinus ? -point : point);
+            let changedUser = { ...user };
+            changedUser.point += isMinus ? -point : point;
+            return changedUser;
+          } catch (error) {
+            window.alert(
+              `${user.number}에서 에러가 발생했습니다. 다시 시도해 주세용.`
+            );
+          }
         }
         return user;
       });
       setType("");
       setUsers(changedUsers);
     };
-    const boothButtonClickHandler = () => {
+    const boothButtonClickHandler = async () => {
       const changedBooths = booths.map((booth) => {
         if (targets.find((target) => target.id === booth.id)) {
-          let changedBooth = { ...booth };
-          changedBooth.point += isMinus ? -point : point;
-          return changedBooth;
+          try {
+            boothPayRequest(booth.id, isMinus ? -point : point);
+            let changedBooth = { ...booth };
+            changedBooth.point += isMinus ? -point : point;
+            changedBooth.totalPoint += isMinus ? 0 : point;
+            console.log(changedBooth);
+            return changedBooth;
+          } catch (error) {
+            window.alert(
+              `${booth.id}에서 에러가 발생했습니다. 다시 시도해 주세요.`
+            );
+          }
         }
         return booth;
       });

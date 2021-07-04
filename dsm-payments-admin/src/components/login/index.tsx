@@ -12,11 +12,11 @@ const Login: FC = () => {
   const buttonClickHandler = async () => {
     localStorage.setItem("password", password);
     try {
-      await loginRequest();
+      await loginRequest(password);
+      localStorage.setItem("password", password);
       setError("");
       history.push("/");
     } catch (error) {
-      console.log(error);
       setError("비밀번호를 확인해 주세요.");
     }
   };

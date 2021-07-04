@@ -21,8 +21,8 @@ const RootRouter: FC = () => {
         <Header />
         <Navigation />
         <Switch>
+          <Route exact path="/login" component={LoginContainer} />
           <Route path="/log" component={LogContainer} />
-          <Route path="/login" component={LoginContainer} />
           <Route path="/user/control" component={UserControlContainer} />
           <Route path="/booth/control" component={BoothControlContainer} />
           <Route exact path="/" component={HomeContainer} />

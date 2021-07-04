@@ -3,6 +3,7 @@ import LogsContextProvider from "./logContext";
 import UserContextProvider from "./usersContext";
 import ModalContextProvider from "./modalContext";
 import BoothsContentProvider from "./boothsContext";
+import StatusContextProvider from "./statusContext";
 
 const RootContextProvider: FC = ({ children }) => {
   const CombinedRootProvider = [
@@ -10,6 +11,7 @@ const RootContextProvider: FC = ({ children }) => {
     LogsContextProvider,
     UserContextProvider,
     BoothsContentProvider,
+    StatusContextProvider,
   ].reduce((PrevValue, CurrentValue) => () => (
     <CurrentValue>
       <PrevValue />

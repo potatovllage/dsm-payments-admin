@@ -5,20 +5,10 @@ type LogContextType = {
   booths: Booth[];
   setBooths: (value: Booth[]) => void;
 };
-
-const dummyBooth: Booth[] = [
-  {
-    id: 1,
-    name: "오준상",
-    point: 100,
-    totalPoint: 300,
-  },
-];
-
 const context = createContext<LogContextType | null>(null);
 
 const BoothsContextProvider: FC = ({ children }) => {
-  const [booths, setBooths] = useState<Booth[]>(dummyBooth);
+  const [booths, setBooths] = useState<Booth[]>([]);
   return (
     <context.Provider value={{ booths, setBooths }}>
       {children}

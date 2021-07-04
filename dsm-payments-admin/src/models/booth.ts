@@ -1,5 +1,5 @@
 type Booth = {
-  id: number;
+  id: string;
   name: string;
   point: number;
   totalPoint: number;
