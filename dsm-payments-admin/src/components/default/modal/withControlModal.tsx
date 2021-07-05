@@ -74,7 +74,9 @@ function withControlModal({ targets, isBooth, isMinus, request }: Props): FC {
         <Button
           width={320}
           height={40}
-          backgroundColor={`var(${isMinus ? "--negative" : "--success"})`}
+          backgroundColor={`var(${
+            isMinus ? "rgb(228, 68, 64)" : "rgb(53, 110, 214)"
+          })`}
           color="white"
           borderColor="white"
           margin="20px 0px 0px 0px"

@@ -30,5 +30,5 @@ export const LoginSubTitle = styled.p`
   margin-top: 10px;
   height: 20px;
   text-align: center;
-  color: var(--negative);
+  color: rgb(228, 68, 64);
 `;
