@@ -21,10 +21,10 @@ jobs:
             ${{ runner.os }}-node-modules-
 
       - name: Install dependencies
-        run: yarn
+        run: cd dsm-payments-admin; yarn
 
       - name: Build
-        run: CI=false yarn build
+        run: cd dsm-payments-admin; CI=false yarn build
 
       - name: Deploy to S3
         env:
