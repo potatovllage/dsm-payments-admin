@@ -9,7 +9,7 @@ interface Props {
   backgroundColor: string;
   borderColor: string;
   margin?: string;
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const Button: FC<Props> = (props) => {

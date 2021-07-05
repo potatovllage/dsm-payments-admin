@@ -9,25 +9,14 @@ const buttonStyle = {
 };
 
 const columns: Column[] = [
-  { field: "id", headerName: "id", width: 100 },
-  { field: "number", headerName: "학번", width: 130, sortable: false },
-  { field: "name", headerName: "이름", width: 150, sortable: false },
+  { field: "id", headerName: "id", width: 150 },
+  { field: "number", headerName: "학번", width: 180, sortable: false },
+  { field: "name", headerName: "이름", width: 200, sortable: false },
   {
     field: "point",
     headerName: "소지금",
     type: "number",
-    width: 150,
-  },
-  {
-    field: "log",
-    headerName: "로그 확인",
-    width: 150,
-    sortable: false,
-    renderCell: () => (
-      <Button {...buttonStyle} backgroundColor="" color="black">
-        로그 보기
-      </Button>
-    ),
+    width: 200,
   },
 ];
 
