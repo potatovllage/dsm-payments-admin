@@ -139,12 +139,12 @@ const Home: FC<Props> = ({ status, loading }) => {
             <EmptyGraph size="middle" description="시간별 부스 판매량" />
           )}
           <Counter
-            number={status.allUserCoinAverage}
+            number={Math.floor(status.allUserCoinAverage)}
             description="유저 평균 코인 보유량"
             unit="point"
           />
           <Counter
-            number={status.allBoothCoinAverage}
+            number={Math.floor(status.allBoothCoinAverage)}
             description="부스 평균 코인 보유량"
             unit="point"
           />
