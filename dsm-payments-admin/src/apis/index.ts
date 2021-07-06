@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const BASE_URL = "http://13.125.7.78:8080";
+export const BASE_URL = "https://api.dsm-pay.com";
 
 export const LOGIN_URI = "/admin/auth";
 export const USER_PAY_URI = "/admin/pay/user";
