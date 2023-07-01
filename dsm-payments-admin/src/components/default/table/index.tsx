@@ -1,9 +1,9 @@
 import React, { ReactElement } from "react";
-import { DataGrid } from "@material-ui/data-grid";
+import { DataGrid, GridRowData } from "@material-ui/data-grid";
 import { Column } from "../../../models/log";
 
 interface Props<Row> {
-  rows: Row[];
+  rows: GridRowData[];
   columns: Column[];
   pageSize?: number;
   style?: object;
@@ -34,8 +34,6 @@ const Table = <Row,>({
         disableColumnSelector={!!disableColumnSelector}
         checkboxSelection={!!checkboxSelection}
         isRowSelectable={() => !!isRowSelectable}
-        onRowSelected={onRowSelected ? onRowSelected : () => {}}
-        onSelectionModelChange={onSelectionModelChange}
         disableColumnMenu
       />
     </div>
