@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const BASE_URL = "http://15.165.47.216:8080";
+export const BASE_URL = "https://payments.gmbot.dev";
 
 export const LOGIN_URI = "/admin/auth";
 export const USER_PAY_URI = "/admin/pay/user";
